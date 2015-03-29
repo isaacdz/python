@@ -70,4 +70,25 @@ exit (1);
 }
 return 0 ;
 }
+int check (char chain[11]) {
 
+int i=0 ,max = 30,pos,cond=0;
+
+char forb[30][11]={"ainsi","aussi","aussitot","avant","bien","cependant","ces","cet","cette","comme","donc","elles","enfin","ils"
+               ,"jusqu'a","lorsque","mais","malgre","neamoins","parce","pourtant","puis","puisque","que","quoi","sinon","soit","tandis"
+               ,"tant","toutefois"};
+        while (i < max) {
+            pos = (i + max) /2  ;
+            if ((cond=strcmp(chain,forb[pos]))== 0) {
+             return  1 ;
+            }  else if (cond < 0) {
+
+                max = pos -1 ;
+            }  else  {
+
+               i = pos + 1 ;
+            }
+
+        }
+        return 0 ;
+}
